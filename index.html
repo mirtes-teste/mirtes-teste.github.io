@@ -68,7 +68,7 @@
 		    .modal{
 			    max-width: 900px;
 		    }
-		     @media (max-width: 767px){
+		     @media (max-width: 900px){
 			    .tipos-chamados{
 				    flex-direction: column;
 			    }
@@ -195,21 +195,21 @@
             </div>
 
              <div class="corpo" id="dpto-rh"  style="display:none">
-                <h2>Para abrir um chamado para o nosso departamento de RH, preencha o formulário abaixo:</h2>
+                <h2>Para abrir um chamado para o nosso departamento de RH, preencha o formulário mais adequado:</h2>
 		          
                 <div class="tipos-chamados">
-			         <a data-izimodal-iframeurl="https://financeiro.on.spiceworks.com/portal"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame5"><i class="fas fa-user-plus"></i>Admissão</a>
+			         <a data-izimodal-iframeurl="https://form.jotform.co/91965581285874"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame5"><i class="fas fa-user-plus"></i>Admissão</a>
 			         <a data-izimodal-iframeurl="https://dptopessoal.on.spiceworks.com/portal"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame6"><i class="fas fa-file-medical"></i>Atestado | Afastamento</a>
-			         <a data-izimodal-iframeurl="https://dptopessoal.on.spiceworks.com/portal"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame7"><i class="fas fa-subway"></i>Benefícios</a>
-			         <a data-izimodal-iframeurl="https://dptopessoal.on.spiceworks.com/portal"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame8"><i class="fas fa-plane-departure"></i> Férias</a>
-			         <a data-izimodal-iframeurl="https://dptopessoal.on.spiceworks.com/portal"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame9"><i class="fas fa-money-bill-alt"></i> Rescisão</a>
+			         <a data-izimodal-iframeurl="https://form.jotform.co/91965729462875"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame7"><i class="fas fa-subway"></i>Benefícios</a>
+			         <a data-izimodal-iframeurl="https://form.jotform.co/91966189193877"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame8"><i class="fas fa-plane-departure"></i> Férias</a>
+			         <a data-izimodal-iframeurl="https://form.jotform.co/91965479901875"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame9"><i class="fas fa-money-bill-alt"></i> Rescisão</a>
                                
                 </div>
                 <a href="#" class="voltar" >Voltar</a> 
             </div>
 
              <div class="corpo" id="financeiro"  style="display:none">
-                <h2>Para abrir um chamado para o nosso departamento financeiro, preencha o formulário abaixo:</h2>
+                <h2>Para abrir um chamado para o nosso departamento financeiro, preencha o formulário mais adequado:</h2>
 		          
                 <div class="tipos-chamados">
 			         <a data-izimodal-iframeurl="https://financeiro.on.spiceworks.com/portal"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame10"><i class="fas fa-barcode"></i>Compras</a>
@@ -331,14 +331,16 @@
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://zarpo.on.spiceworks.com/portal/tickets" //Link will be opened inside modal
+				  iframeURL: "https://zarpo.on.spiceworks.com/portal/tickets",
+				  width: '900px' //Link will be opened inside modal
 				});
 				$("#modal-iFrame2").iziModal({
 				  title: 'Entrada de Funcionário', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotformz.com/90526047958668" //Link will be opened inside modal
+				  iframeURL: "https://form.jotformz.com/90526047958668",
+				  width: '900px' //Link will be opened inside modal
 				});
 				
 				$("#modal-iFrame3").iziModal({
@@ -346,7 +348,8 @@
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotformz.com/90526441690659" //Link will be opened inside modal
+				  iframeURL: "https://form.jotformz.com/90526441690659",
+				  width: '900px' //Link will be opened inside modal
 				});
 				
 				$("#modal-iFrame4").iziModal({
@@ -354,63 +357,71 @@
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotformz.com/90526079912663" //Link will be opened inside modal
+				  iframeURL: "https://form.jotformz.com/90526079912663", //Link will be opened inside modal
+				  width: '900px'
 				});
                 $("#modal-iFrame5").iziModal({
 				  title: 'Admissão', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://financeiro.on.spiceworks.com/portal" //Link will be opened inside modal
+				  iframeURL: "https://form.jotform.co/91965581285874", 
+				  width: '900px' //Link will be opened inside modal
 				});
                 $("#modal-iFrame6").iziModal({
 				  title: 'Atestado | Afastamento', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://financeiro.on.spiceworks.com/portal/tickets" //Link will be opened inside modal
+				  iframeURL: "https://dptopessoal.on.spiceworks.com/portal" //Link will be opened inside modal
 				});
 				$("#modal-iFrame7").iziModal({
 				  title: 'Benefícios', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://financeiro.on.spiceworks.com/portal/tickets" //Link will be opened inside modal
+				  iframeURL: "https://form.jotform.co/91965729462875",
+				  width: '900px' //Link will be opened inside modal
 				});
 				$("#modal-iFrame8").iziModal({
 				  title: 'Férias', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://financeiro.on.spiceworks.com/portal/tickets" //Link will be opened inside modal
+				  iframeURL: "https://form.jotform.co/91966189193877",
+				  width: '900px' //Link will be opened inside modal
 				});
 				$("#modal-iFrame9").iziModal({
 				  title: 'Rescisão', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://financeiro.on.spiceworks.com/portal/tickets" //Link will be opened inside modal
+				  iframeURL: "https://form.jotform.co/91965479901875",
+				  width: '900px' //Link will be opened inside modal
 				});
 				$("#modal-iFrame10").iziModal({
 				  title: 'Compras', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://financeiro.on.spiceworks.com/portal" //Link will be opened inside modal
+				  iframeURL: "https://financeiro.on.spiceworks.com/portal",
+				  width: '900px' //Link will be opened inside modal
 				});
 				$("#modal-iFrame11").iziModal({
 				  title: 'Adiantamento de Reembolso', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91956339156872" //Link will be opened inside modal
+				  iframeURL: "https://form.jotform.co/91956339156872",
+				  width: '900px' //Link will be opened inside modal
 				});
 				$("#modal-iFrame12").iziModal({
 				  title: 'Reembolso', //Modal title
 				  fullscreen: true, //Icon to expand modal to fullscreen
 				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
 				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91956574566878" //Link will be opened inside modal
+				  iframeURL: "https://form.jotform.co/91956574566878",
+				  width: '900px' //Link will be opened inside modal
 				});
 
 			})
