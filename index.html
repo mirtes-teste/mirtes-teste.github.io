@@ -1,431 +1,450 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
 
+
 <html>
-	<head>
-	    <title>Zarpo - Criação de Chamados</title>
-	    <meta name="robots" content="noindex" />
-	    <meta charset="utf-8">
-	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-		<!-- Remember to include jQuery :) -->
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha256-vVnwgKyq3pIb4XdL91l1EC8j7URqDRK8BAWvSnKX0U8=" crossorigin="anonymous"></script>
-		<!-- jQuery Modal -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" />
-	
-	
-	    <style>
-		    body{
-			    background-color:#211713;
-			    font-family: Roboto;
-				padding: 100px 0;
-		    }
-		    h1, h2{
-			    color:#ffface;
-		    }
-		    .v-align{
-				display: block;
-				width: auto;
-				margin:auto;
-				text-align: center;
-		    }
-		    .img-responsive{
-			    max-width: 100%;
-			    display: inline-block;
-		    }
-		    .tipos-chamados{
-			    max-width: 550px;
-			    display: flex;
-			    justify-content: space-around;
-			    margin:auto;
-		    }
-		    .tipos-chamados a{
-			    color:#211713;
-			    background-color:#ffface;
-			    border-radius:5px;
-			    padding:5px 10px;
-			    text-decoration: none;
-			    text-align: center;
-			    width:120px;
-			    margin-bottom: 15px;
-			    line-height: 1;
-			    padding:10px;
-			    margin:10px;
-			    cursor: pointer;
-		    }
-		    .tipos-chamados a:hover{
-			    background-color:#ece49a;
-			    box-shadow: inset 1px 1px 10px black;
-		    }
-		    .tipos-chamados a i{
-			    font-size: 60px;
-			    display: block;
-			    clear:both;
-			    margin-bottom: 10px;
-		    }
-		    .modal{
-			    max-width: 900px;
-		    }
-		     @media (max-width: 900px){
-			    .tipos-chamados{
-				    flex-direction: column;
-			    }
-			    .tipos-chamaados a{
-				    width: 100%;
-			    }
-                 			    
-		    }
-            
-            .voltar:link{
-                color:#211713;
-			    background-color:#ffface;
-			    border-radius:5px;
-			    padding:5px 10px;
-			    text-decoration: none;
-			    text-align: center;
-			    width:120px;
-			    margin-bottom: 15px;
-			    line-height: 4;
-			    padding:10px;
-			    margin:10px;
-			    cursor: pointer;
-            }
-            .voltar:active{
-                color:#211713;
-			    background-color:#ffface;
-			    border-radius:5px;
-			    padding:5px 10px;
-			    text-decoration: none;
-			    text-align: center;
-			    width:120px;
-			    margin-bottom: 15px;
-			    line-height: 4;
-			    padding:10px;
-			    margin:10px;
-			    cursor: pointer;
-            }
-            .voltar:visited{
-                color:#211713;
-			    background-color:#ffface;
-			    border-radius:5px;
-			    padding:5px 10px;
-			    text-decoration: none;
-			    text-align: center;
-			    width:120px;
-			    margin-bottom: 15px;
-			    line-height: 4;
-			    padding:10px;
-			    margin:10px;
-			    cursor: pointer;
-            }
-            .voltar:hover{
-                color:#211713;
-			    background-color:#ece49a;
-			    box-shadow: inset 1px 1px 10px black;
-			    border-radius:5px;
-			    padding:5px 10px;
-			    text-decoration: none;
-			    text-align: center;
-			    width:120px;
-			    margin-bottom: 15px;
-			    line-height: 4;
-			    padding:10px;
-			    margin:10px;
-			    cursor: pointer;
-            }
-            
-	    </style>
-	</head>
-	
-	<body>
-		<div class="v-align">
-			<img src="https://magazine.zarpo.com.br/wp-content/uploads/2019/02/zarpo-logo-manutencao.png" alt="Logo Zarpo" class="img-responsive" />
-		    <h1>Criação de Chamados</h1>
-            
-            <div class="corpo" id="inicio">
-                <h2>Escolha o setor desejado para abrir seu chamado:</h2>
-		    
-                <div class="tipos-chamados">
-                    <a href="#" id="mostraTI"><i class="fas fa-laptop-medical"></i>TI</a>
-                    <a href="#" id="mostraRH"><i class="far fa-handshake"></i>DPTO|RH</a>
-                    <a href="#" id="mostraFIN"><i class="fas fa-hand-holding-usd"></i>Financeiro</a>
-                </div>
-            </div>
-            
-            <script>
-                 $(document).ready(function() {
-                    $("#mostraTI").click(mostraTI);
-                    $("#mostraRH").click(mostraRH);
-                    $("#mostraFIN").click(mostraFIN);
-                    $(".voltar").click(volta);
-                });
- 
-                function mostraTI(){
-                    $(".corpo").hide();
-                    $("#ti").fadeIn(1000);
-                }
-                function mostraRH(){
-                    $(".corpo").hide();
-                    $("#dpto-rh").fadeIn(1000);
-                }
-                function mostraFIN(){
-                    $(".corpo").hide();
-                    $("#financeiro").fadeIn(1000);
-                }
-                function volta(){
-                    $(".corpo").hide();
-                    $("#inicio").fadeIn(1000);
-                }
-                
-            </script>
-           
-		    
-            <div class="corpo" id="ti"  style="display:none">
-                <h2>Para abrir um chamado de suporte de TI preencha o formulário mais adequado:</h2>
-		    
-                <div class="tipos-chamados">
-			     <a data-izimodal-iframeurl="https://zarpo.on.spiceworks.com/portal/tickets"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame1"><i class="fa fa-screwdriver"></i> Chamado de Suporte</a>
-			     <a data-izimodal-iframeurl="https://form.jotformz.com/90526047958668"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame2"><i class="fa fa-user-plus"></i> Entrada de Funcionário</a>
-			     <a data-izimodal-iframeurl="https://form.jotformz.com/90526441690659"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame3"><i class="fa fa-user-minus"></i> Saída de Funcionário</a>
-			     <a data-izimodal-iframeurl="https://form.jotformz.com/90526079912663"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame4"><i class="fa fa-laptop"></i> Computador Adicional</a>
-                </div>
-                <a href="#" class="voltar">Voltar</a> 
-            </div>
 
-             <div class="corpo" id="dpto-rh"  style="display:none">
-                <h2>Para abrir um chamado para o nosso departamento de RH, preencha o formulário mais adequado:</h2>
-		          
-                <div class="tipos-chamados">
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91965581285874"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame5"><i class="fas fa-user-plus"></i>Admissão</a>
-			         <a data-izimodal-iframeurl="https://www.jotform.com/build/91966898333880"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame6"><i class="fas fa-file-medical"></i>Atestado | Afastamento</a>
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91965729462875"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame7"><i class="fas fa-subway"></i>Benefícios</a>
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91966189193877"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame8"><i class="fas fa-plane-departure"></i> Férias</a>
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91965479901875"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame9"><i class="fas fa-money-bill-alt"></i> Rescisão</a>
-                               
-                </div>
-                <a href="#" class="voltar" >Voltar</a> 
-            </div>
+<head>
+    <title>Zarpo - Criação de Chamados</title>
+    <meta name="robots" content="noindex" />
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Remember to include jQuery :) -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha256-vVnwgKyq3pIb4XdL91l1EC8j7URqDRK8BAWvSnKX0U8=" crossorigin="anonymous"></script>
+    <!-- jQuery Modal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" />
 
-             <div class="corpo" id="financeiro"  style="display:none">
-                <h2>Para abrir um chamado para o nosso departamento financeiro, preencha o formulário mais adequado:</h2>
-		          
-                <div class="tipos-chamados">
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91967101592865"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame10"><i class="fas fa-barcode"></i>Compras</a>
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91956339156872"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame11"><i class="fas fa-file-invoice-dollar"></i> Adiantamento de Reembolso</a>
-			         <a data-izimodal-iframeurl="https://form.jotform.co/91956574566878"  data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame12"><i class="fas fa-dollar-sign"></i>Reembolso</a>
 
-                </div>
-                <a href="#" class="voltar">Voltar</a> 
-            </div>
-           
-		</div>
-		
-		<div id="modal-iframe"> 
-		</div>
-		
-		<div id="modal-iframe2"> 
-		</div>
-		
-		<div id="modal-iframe3"> 
-		</div>
-		
-		<div id="modal-iframe4"> 
-		</div>
+    <style>
+        body {
+            background-color: #211713;
+            font-family: Roboto;
+            padding: 100px 0;
+        }
         
-        <div id="modal-iframe5"> 
-		</div>
+        h1,
+        h2 {
+            color: #ffface;
+        }
         
-        <div id="modal-iframe6"> 
-		</div>
-
-		<div id="modal-iframe7"> 
-		</div>
-
-		<div id="modal-iframe8"> 
-		</div>
-
-		<div id="modal-iframe9"> 
-		</div>
-
-		<div id="modal-iframe10"> 
-		</div>
-
-		<div id="modal-iframe11"> 
-		</div>
-
-		<div id="modal-iframe12"> 
-		</div>
-
+        .v-align {
+            display: block;
+            width: auto;
+            margin: auto;
+            text-align: center;
+        }
         
-	
-		<script>
-               
-              $(document).ready(function() {
+        .img-responsive {
+            max-width: 100%;
+            display: inline-block;
+        }
+        
+        .tipos-chamados {
+            max-width: 550px;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+        }
+        
+        .tipos-chamados a {
+            color: #211713;
+            background-color: #ffface;
+            border-radius: 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            text-align: center;
+            width: 120px;
+            margin-bottom: 15px;
+            line-height: 1;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .tipos-chamados a:hover {
+            background-color: #ece49a;
+            box-shadow: inset 1px 1px 10px black;
+        }
+        
+        .tipos-chamados a i {
+            font-size: 60px;
+            display: block;
+            clear: both;
+            margin-bottom: 10px;
+        }
+        
+        .modal {
+            max-width: 900px;
+        }
+        
+        @media (max-width: 900px) {
+            .tipos-chamados {
+                flex-direction: column;
+            }
+            .tipos-chamaados a {
+                width: 100%;
+            }
+        }
+        
+        .voltar:link {
+            color: #211713;
+            background-color: #ffface;
+            border-radius: 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            text-align: center;
+            width: 120px;
+            margin-bottom: 15px;
+            line-height: 4;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .voltar:active {
+            color: #211713;
+            background-color: #ffface;
+            border-radius: 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            text-align: center;
+            width: 120px;
+            margin-bottom: 15px;
+            line-height: 4;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .voltar:visited {
+            color: #211713;
+            background-color: #ffface;
+            border-radius: 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            text-align: center;
+            width: 120px;
+            margin-bottom: 15px;
+            line-height: 4;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .voltar:hover {
+            color: #211713;
+            background-color: #ece49a;
+            box-shadow: inset 1px 1px 10px black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            text-align: center;
+            width: 120px;
+            margin-bottom: 15px;
+            line-height: 4;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .gestor {
+            font-size: 10pt;
+            font-weight: bold;
+        }
+    </style>
+</head>
 
-				$(document).on('click', '.trigger-iFrame1', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame1').iziModal('open', this); // Do not forget the "this"
-				});
-				
-				$(document).on('click', '.trigger-iFrame2', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame2').iziModal('open', this); // Do not forget the "this"
-				});
-				
-				$(document).on('click', '.trigger-iFrame3', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame3').iziModal('open', this); // Do not forget the "this"
-				});
-				
-				$(document).on('click', '.trigger-iFrame4', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame4').iziModal('open', this); // Do not forget the "this"
-				});
-                
-                $(document).on('click', '.trigger-iFrame5', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame5').iziModal('open', this); // Do not forget the "this"
-				});
-                
-                $(document).on('click', '.trigger-iFrame6', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame6').iziModal('open', this); // Do not forget the "this"
-				});
+<body>
+    <div class="v-align">
+        <img src="https://magazine.zarpo.com.br/wp-content/uploads/2019/02/zarpo-logo-manutencao.png" alt="Logo Zarpo" class="img-responsive" />
+        <h1>Criação de Chamados</h1>
 
-				$(document).on('click', '.trigger-iFrame7', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame7').iziModal('open', this); // Do not forget the "this"
-				});
+        <div class="corpo" id="inicio">
+            <h2>Escolha o setor desejado para abrir seu chamado:</h2>
 
-				$(document).on('click', '.trigger-iFrame8', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame8').iziModal('open', this); // Do not forget the "this"
-				});
+            <div class="tipos-chamados">
+                <a href="#" id="mostraTI"><i class="fas fa-laptop-medical"></i>TI</a>
+                <a href="#" id="mostraRH"><i class="far fa-handshake"></i>DPTO|RH</a>
+                <a href="#" id="mostraFIN"><i class="fas fa-hand-holding-usd"></i>Financeiro</a>
+            </div>
+        </div>
 
-				$(document).on('click', '.trigger-iFrame9', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame9').iziModal('open', this); // Do not forget the "this"
-				});
+        <script>
+            $(document).ready(function() {
+                $("#mostraTI").click(mostraTI);
+                $("#mostraRH").click(mostraRH);
+                $("#mostraFIN").click(mostraFIN);
+                $(".voltar").click(volta);
+            });
 
-				$(document).on('click', '.trigger-iFrame10', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame10').iziModal('open', this); // Do not forget the "this"
-				});
+            function mostraTI() {
+                $(".corpo").hide();
+                $("#ti").fadeIn(1000);
+            }
 
-				$(document).on('click', '.trigger-iFrame11', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame11').iziModal('open', this); // Do not forget the "this"
-				});
+            function mostraRH() {
+                $(".corpo").hide();
+                $("#dpto-rh").fadeIn(1000);
+            }
 
-				$(document).on('click', '.trigger-iFrame12', function(event) {
-				  event.preventDefault();
-				  $('#modal-iFrame12').iziModal('open', this); // Do not forget the "this"
-				});
-				
-				
-				//Modal options
-				$("#modal-iFrame1").iziModal({
-				  title: 'Chamado de Suporte', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://zarpo.on.spiceworks.com/portal/tickets",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame2").iziModal({
-				  title: 'Entrada de Funcionário', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotformz.com/90526047958668",
-				  width: '900px' //Link will be opened inside modal
-				});
-				
-				$("#modal-iFrame3").iziModal({
-				  title: 'Saída de Funcionário', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotformz.com/90526441690659",
-				  width: '900px' //Link will be opened inside modal
-				});
-				
-				$("#modal-iFrame4").iziModal({
-				  title: 'Computador Adicional', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotformz.com/90526079912663", //Link will be opened inside modal
-				  width: '900px'
-				});
-                $("#modal-iFrame5").iziModal({
-				  title: 'Admissão', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91965581285874", 
-				  width: '900px' //Link will be opened inside modal
-				});
-                $("#modal-iFrame6").iziModal({
-				  title: 'Atestado | Afastamento', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://www.jotform.com/build/91966898333880",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame7").iziModal({
-				  title: 'Benefícios', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91965729462875",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame8").iziModal({
-				  title: 'Férias', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91966189193877",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame9").iziModal({
-				  title: 'Rescisão', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91965479901875",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame10").iziModal({
-				  title: 'Compras', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91967101592865",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame11").iziModal({
-				  title: 'Adiantamento de Reembolso', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91956339156872",
-				  width: '900px' //Link will be opened inside modal
-				});
-				$("#modal-iFrame12").iziModal({
-				  title: 'Reembolso', //Modal title
-				  fullscreen: true, //Icon to expand modal to fullscreen
-				  headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
-				  iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
-				  iframeURL: "https://form.jotform.co/91956574566878",
-				  width: '900px' //Link will be opened inside modal
-				});
+            function mostraFIN() {
+                $(".corpo").hide();
+                $("#financeiro").fadeIn(1000);
+            }
 
-			})
-		</script>
-	</body>
+            function volta() {
+                $(".corpo").hide();
+                $("#inicio").fadeIn(1000);
+            }
+        </script>
+
+
+        <div class="corpo" id="ti" style="display:none">
+            <h2>Para abrir um chamado de suporte de TI preencha o formulário mais adequado:</h2>
+
+            <div class="tipos-chamados">
+                <a data-izimodal-iframeurl="https://zarpo.on.spiceworks.com/portal/tickets" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame1"><i class="fa fa-screwdriver"></i> Chamado de Suporte</a>
+                <a data-izimodal-iframeurl="https://form.jotformz.com/90526047958668" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame2"><i class="fa fa-user-plus"></i> Entrada de Funcionário</a>
+                <a data-izimodal-iframeurl="https://form.jotformz.com/90526441690659" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame3"><i class="fa fa-user-minus"></i> Saída de Funcionário</a>
+                <a data-izimodal-iframeurl="https://form.jotformz.com/90526079912663" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame4"><i class="fa fa-laptop"></i> Computador Adicional</a>
+            </div>
+            <a href="#" class="voltar">Voltar</a>
+        </div>
+
+        <div class="corpo" id="dpto-rh" style="display:none">
+            <h2>Para abrir um chamado para o nosso departamento de RH, preencha o formulário mais adequado:</h2>
+
+            <div class="tipos-chamados">
+                <a data-izimodal-iframeurl="https://form.jotform.co/91965581285874" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame5"><i class="fas fa-user-plus"></i>Admissão <span class="gestor">(Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://www.jotform.com/build/91966898333880" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame6"><i class="fas fa-file-medical"></i>Atestado | Afastamento <span class="gestor">(Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91965479901875" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame9"><i class="fas fa-money-bill-alt"></i> Desligamento <span class="gestor"> (Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91965729462875" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame7"><i class="fas fa-subway"></i>Benefícios</a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91966189193877" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame8"><i class="fas fa-plane-departure"></i> Férias</a>
+
+
+            </div>
+            <a href="#" class="voltar">Voltar</a>
+        </div>
+
+        <div class="corpo" id="financeiro" style="display:none">
+            <h2>Para abrir um chamado para o nosso departamento financeiro, preencha o formulário mais adequado:</h2>
+
+            <div class="tipos-chamados">
+                <a data-izimodal-iframeurl="https://form.jotform.co/91967101592865" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame10"><i class="fas fa-barcode"></i>Compras</a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91956339156872" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame11"><i class="fas fa-file-invoice-dollar"></i> Adiantamento de Reembolso</a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91956574566878" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame12"><i class="fas fa-dollar-sign"></i>Reembolso</a>
+
+            </div>
+            <a href="#" class="voltar">Voltar</a>
+        </div>
+
+    </div>
+
+    <div id="modal-iframe">
+    </div>
+
+    <div id="modal-iframe2">
+    </div>
+
+    <div id="modal-iframe3">
+    </div>
+
+    <div id="modal-iframe4">
+    </div>
+
+    <div id="modal-iframe5">
+    </div>
+
+    <div id="modal-iframe6">
+    </div>
+
+    <div id="modal-iframe7">
+    </div>
+
+    <div id="modal-iframe8">
+    </div>
+
+    <div id="modal-iframe9">
+    </div>
+
+    <div id="modal-iframe10">
+    </div>
+
+    <div id="modal-iframe11">
+    </div>
+
+    <div id="modal-iframe12">
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() {
+
+            $(document).on('click', '.trigger-iFrame1', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame1').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame2', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame2').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame3', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame3').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame4', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame4').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame5', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame5').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame6', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame6').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame7', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame7').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame8', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame8').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame9', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame9').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame10', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame10').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame11', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame11').iziModal('open', this); // Do not forget the "this"
+            });
+
+            $(document).on('click', '.trigger-iFrame12', function(event) {
+                event.preventDefault();
+                $('#modal-iFrame12').iziModal('open', this); // Do not forget the "this"
+            });
+
+
+            //Modal options
+            $("#modal-iFrame1").iziModal({
+                title: 'Chamado de Suporte', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://zarpo.on.spiceworks.com/portal/tickets",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame2").iziModal({
+                title: 'Entrada de Funcionário', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotformz.com/90526047958668",
+                width: '900px' //Link will be opened inside modal
+            });
+
+            $("#modal-iFrame3").iziModal({
+                title: 'Saída de Funcionário', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotformz.com/90526441690659",
+                width: '900px' //Link will be opened inside modal
+            });
+
+            $("#modal-iFrame4").iziModal({
+                title: 'Computador Adicional', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotformz.com/90526079912663", //Link will be opened inside modal
+                width: '900px'
+            });
+            $("#modal-iFrame5").iziModal({
+                title: 'Admissão', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91965581285874",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame6").iziModal({
+                title: 'Atestado | Afastamento', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://www.jotform.com/build/91966898333880",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame7").iziModal({
+                title: 'Benefícios', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91965729462875",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame8").iziModal({
+                title: 'Férias', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91966189193877",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame9").iziModal({
+                title: 'Desligamento', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91965479901875",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame10").iziModal({
+                title: 'Compras', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91967101592865",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame11").iziModal({
+                title: 'Adiantamento de Reembolso', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91956339156872",
+                width: '900px' //Link will be opened inside modal
+            });
+            $("#modal-iFrame12").iziModal({
+                title: 'Reembolso', //Modal title
+                fullscreen: true, //Icon to expand modal to fullscreen
+                headerColor: 'rgb(51, 76, 123)', //Color of modal header. Hexa colors allowed.
+                iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
+                iframeURL: "https://form.jotform.co/91956574566878",
+                width: '900px' //Link will be opened inside modal
+            });
+
+        })
+    </script>
+</body>
+
 </html>
