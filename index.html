@@ -205,9 +205,16 @@
 
             <div class="tipos-chamados">
                 <a data-izimodal-iframeurl="https://zarpo.on.spiceworks.com/portal/tickets" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame1"><i class="fa fa-screwdriver"></i> Chamado de Suporte</a>
-                <a data-izimodal-iframeurl="https://form.jotformz.com/90526047958668" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame2"><i class="fa fa-user-plus"></i> Entrada de Funcionário<span class="gestor"><br>(Uso exclusivo do gestor)</span></a>
-                <a data-izimodal-iframeurl="https://form.jotformz.com/90526441690659" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame3"><i class="fa fa-user-minus"></i>Saída de Funcionário<span class="gestor"><br>(Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://form.jotformz.com/90526047958668" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame2" onclick="funcao2()" value="Exibir Alert"><i class="fa fa-user-plus"></i> Entrada de Funcionário<span class="gestor"><br>(Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://form.jotformz.com/90526441690659" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame3" onclick="funcao2()" value="Exibir Alert"><i class="fa fa-user-minus"></i>Saída de Funcionário<span class="gestor"><br>(Uso exclusivo do gestor)</span></a>
                 <a data-izimodal-iframeurl="https://form.jotformz.com/90526079912663" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame4"><i class="fa fa-laptop"></i> Computador Adicional</a>
+
+                <script>
+                    function funcao2()
+                        {
+                            alert("Antes de criar este chamado, certifique-se de ter aberto procedimento com o DPTO|RH.");
+                        }
+                </script>
             </div>
             <a href="#" class="voltar">Voltar</a>
         </div>
@@ -216,11 +223,18 @@
             <h2>Para abrir um chamado para o nosso departamento de RH, preencha o formulário mais adequado:</h2>
 
             <div class="tipos-chamados">
-                <a data-izimodal-iframeurl="https://form.jotform.co/91965581285874" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame5"><i class="fas fa-user-plus"></i>Admissão <span class="gestor">(Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91965581285874" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame5" onclick="funcao1()" value="Exibir Alert"><i class="fas fa-user-plus"></i>Admissão <span class="gestor">(Uso exclusivo do gestor)</span></a>
                 <a data-izimodal-iframeurl="https://form.jotform.co/91966898333880" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame6"><i class="fas fa-file-medical"></i>Atestado | Afastamento <span class="gestor"><br>(Uso exclusivo do gestor)</span></a>
-                <a data-izimodal-iframeurl="https://form.jotform.co/91965479901875" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame9"><i class="fas fa-money-bill-alt"></i> Desligamento <span class="gestor"> (Uso exclusivo do gestor)</span></a>
+                <a data-izimodal-iframeurl="https://form.jotform.co/91965479901875" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame9" onclick="funcao1()" value="Exibir Alert"><i class="fas fa-money-bill-alt"></i> Desligamento <span class="gestor"> (Uso exclusivo do gestor)</span></a>
                 <a data-izimodal-iframeurl="https://form.jotform.co/91965729462875" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame7"><i class="fas fa-subway"></i>Benefícios</a>
                 <a data-izimodal-iframeurl="https://form.jotform.co/91966189193877" data-izimodal-iframe='true' data-izimodal-open="#modal-iframe" class="trigger-iFrame8"><i class="fas fa-plane-departure"></i> Férias</a>
+
+                <script>
+                    function funcao1()
+                        {
+                            alert("Após o preenchimento deste formulário, abra um chamado para a TI.");
+                        }
+                </script>
 
 
             </div>
